@@ -103,10 +103,10 @@ func writeItems(writer io.Writer, prefix string, items []DiffItem) {
 	writer.Write([]byte{'{'})
 	last := len(items) - 1
 
-	prefixNotEqualsA := prefix + "<> "
-	prefixNotEqualsB := prefix + "** "
-	prefixAdded := prefix + "<< "
-	prefixRemoved := prefix + ">> "
+	prefixNotEqualsA := prefix + "- "
+	prefixNotEqualsB := prefix + "+ "
+	prefixAdded := prefix + "+ "
+	prefixRemoved := prefix + "- "
 
 	for i, item := range items {
 		writer.Write([]byte{'\n'})
